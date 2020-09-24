@@ -1,8 +1,10 @@
-pub fn remove_suffix<'a>(s: &'a str, p: &str) -> &'a str {
-    if s.ends_with(p) {
-        &s[..s.len() - p.len()]
+/// Returns a &str in which a given suffix is hidden 
+/// See https://stackoverflow.com/a/59330922/562222
+pub fn withotu_suffix<'a>(src: &'a str, suffix: &str) -> &'a str {
+    if src.ends_with(suffix) {
+        &src[..src.len() - suffix.len()]
     } else {
-        s
+        src
     }
 }
 
